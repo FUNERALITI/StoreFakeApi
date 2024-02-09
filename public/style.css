@@ -1,0 +1,41 @@
+.body{
+  padding: px;
+  margin: 0;
+  border: 0;
+}
+
+.App {
+  display: flex;
+  justify-Content: space-between; 
+  flex-Wrap: wrap; 
+  width: 100%;
+}
+
+.product {
+  width: 11%;
+  margin-bottom: 50px;
+  font-family: cursive;
+  border: 1px solid black;
+  margin-right: 50px;
+  
+}
+
+.inside{
+  padding: 25px;
+  
+}
+.image {
+  width: 110px;
+  height: 125px;
+  margin-bottom: 20px;
+}
+
+.title {
+  word-wrap: break-word;
+  margin-bottom: 20px;
+}
+
+.price {
+  font-size: 20px;
+  font: bold;
+}
