@@ -1,32 +1,20 @@
-import { useState } from "react";
-import { getProducts } from "./api/getItems";
-import { Product } from "./components/Product";
-import { IProduct } from "./models/model";
-import BrowserRout from "./components/BrowserRoute";
+import ListProducts from "./components/allProducts/ListProducts";
+import { Route, Routes } from "react-router-dom";
+import { ProductDetail } from "./components/allProducts/ProductDetail";
+import { ListBasket } from "./components/Basket/ListBasket";
+import { AppHeader } from "./components/Layout/AppHeader/AppHeader";
 
 function App() {
-  const [products, setProducts ] = useState<IProduct[]>([])
-
-  // TODO посмотреть почему постоянно вызывается эта функция (useEffect мб пофиксиьт)
-  getProducts().then((result) => {
-    setProducts(result);
-  });
-  
   return (
     <div className="App">
-      <BrowserRout/>
-      {
-      products.length > 0 ? (
-        products.map((el) => {
-          return (
-            <Product product={el} />
-          )
-        }
-        )
-      ) : (
-        <span>Нет продуктов</span>
-      )
-      }
+      <AppHeader />
+      <div className="content-style">
+        <Routes>
+          <Route path="/" element={<ListProducts />} />
+          <Route path="/product/:productId" element={<ProductDetail />} />
+        </Routes>
+      </div>
+      <ListBasket />
     </div>
   );
 }
