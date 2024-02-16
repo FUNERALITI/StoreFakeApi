@@ -1,21 +1,25 @@
 import ListProducts from "./components/allProducts/ListProducts";
 import { Route, Routes } from "react-router-dom";
 import { ProductDetail } from "./components/allProducts/ProductDetail";
-import { ListBasket } from "./components/Basket/ListBasket";
+import { BtnBasket } from "./components/Basket/BtnBasket";
 import { AppHeader } from "./components/Layout/AppHeader/AppHeader";
+import { Provider } from "react-redux";
+import store from "./store";
 
 function App() {
   return (
-    <div className="App">
-      <AppHeader />
-      <div className="content-style">
-        <Routes>
-          <Route path="/" element={<ListProducts />} />
-          <Route path="/product/:productId" element={<ProductDetail />} />
-        </Routes>
+    <Provider store={store}>
+      <div className="App">
+        <AppHeader />
+        <div className="content-style">
+          <Routes>
+            <Route path="/" element={<ListProducts />} />
+            <Route path="/product/:productId" element={<ProductDetail />} />
+          </Routes>
+        </div>
+        <BtnBasket />
       </div>
-      <ListBasket />
-    </div>
+    </Provider>
   );
 }
 

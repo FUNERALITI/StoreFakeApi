@@ -143,3 +143,14 @@
   font-size: 80px;
 }
 
+.product-in-basket {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-in-basket img {
+  width: 100px;
+  height: 100px;
+} 
+
+

@@ -1,6 +1,5 @@
 import { IProduct } from "../../models/model";
 import { Link } from "react-router-dom";
-// import { Button } from "react-bootstrap";
 
 interface ProductProps {
   product: IProduct;

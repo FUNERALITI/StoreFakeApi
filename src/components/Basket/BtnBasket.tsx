@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { InfoBasket } from "./InfoBasket";
+import { InsideBasket } from "./InsideBasket";
+
 import { Button } from "react-bootstrap";
 
-export const ListBasket = () => {
+export const BtnBasket = () => {
   const [isModalOpen, setModalOpen] = useState(false);
 
   return (
@@ -24,7 +25,7 @@ export const ListBasket = () => {
         </svg>
       </Button>
 
-      <InfoBasket isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
+      <InsideBasket isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
     </div>
   );
 };
