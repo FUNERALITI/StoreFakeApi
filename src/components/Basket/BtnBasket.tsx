@@ -3,8 +3,13 @@ import { InsideBasket } from "./InsideBasket";
 
 import { Button } from "react-bootstrap";
 
+import styled from "styled-components";
+import { useSelector } from "react-redux";
+import { BasketState } from "../../store/slices/basketSlice";
+
 export const BtnBasket = () => {
   const [isModalOpen, setModalOpen] = useState(false);
+  const clothesCount = useSelector((state: BasketState) => state.value).length;
 
   return (
     <div>
@@ -13,6 +18,9 @@ export const BtnBasket = () => {
         variant="dark"
         onClick={() => setModalOpen(true)}
       >
+        <WrapperCount>
+          <Count>{clothesCount}</Count>
+        </WrapperCount>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="50"
@@ -29,3 +37,15 @@ export const BtnBasket = () => {
     </div>
   );
 };
+
+const WrapperCount = styled.div`
+  background-color: white;
+  color: red;
+  border-radius: 50%;
+`;
+
+const Count = styled.div`
+  font-size: 12;
+  line-height: 16px;
+  font-weight: 600;
+`;
