@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { IProduct } from "../../models/model";
 import { useEffect, useState } from "react";
 import { getSingleProduct } from "../../api/getSingleProduct";
+import styled from "styled-components";
 
 export const ProductDetail = () => {
   const { productId } = useParams();
@@ -30,3 +31,5 @@ export const ProductDetail = () => {
     </div>
   );
 };
+
+const Detail = styled.div``;
