@@ -3,6 +3,7 @@ import { PageOne, PageTwo } from "./Page";
 
 function BrowserRoute() {
   console.log("BrowserRoute component rendered");
+  console.log("BrowserRoute component props:", {});
   
   return (
     <Routes>
